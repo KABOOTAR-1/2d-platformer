@@ -16,7 +16,7 @@ public class Spawn : MonoBehaviour
     void Update()
     {
        
-        if (Input.GetKeyUp(KeyCode.F) && Time.time>newtime)
+        if (Input.GetKeyDown(KeyCode.F) && Time.time>newtime)
         {
             newtime = Time.time + timegap/Time.deltaTime;
             Instantiate(fireball, transform.position, Quaternion.identity);
