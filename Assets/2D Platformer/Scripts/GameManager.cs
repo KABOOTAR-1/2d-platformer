@@ -12,7 +12,7 @@ namespace Platformer
         public GameObject playerGameObject;
         private PlayerController player;
         public GameObject deathPlayerPrefab;
-        public Text coinText;
+     //   public Text coinText;
 
         void Start()
         {
@@ -21,7 +21,7 @@ namespace Platformer
 
         void Update()
         {
-            coinText.text = coinsCounter.ToString();
+            //coinText.text = coinsCounter.ToString();
             if(player.deathState == true)
             {
                 playerGameObject.SetActive(false);
