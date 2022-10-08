@@ -14,6 +14,7 @@ public class Fireballmove : MonoBehaviour
         rigidbody = gameObject.GetComponent<Rigidbody2D>();
         face = Tags.facingRight;
         Scaler = transform.localScale;
+        Invoke("delete", 1.3f);
     }
 
     // Update is called once per frame
@@ -35,6 +36,16 @@ public class Fireballmove : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    { 
+        if (collision.gameObject.tag != "Player" && collision.gameObject.tag!="Fireball")
+            Destroy(gameObject);
     }
+
+    private void delete()
+    {
+        Destroy(gameObject);
+    }
+}
 
 

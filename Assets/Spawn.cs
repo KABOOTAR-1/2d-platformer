@@ -6,7 +6,7 @@ public class Spawn : MonoBehaviour
 {
     public GameObject fireball;
     float newtime = 0f;
-    float timegap =0.0015f;
+    float timegap =0.0013f;
     void Start()
     {
         
