@@ -10,26 +10,32 @@ namespace Platformer
         public int coinsCounter = 0;
 
         public GameObject playerGameObject;
-        private PlayerController player;
+        public PlayerController[] player;
         public GameObject deathPlayerPrefab;
-     //   public Text coinText;
+        //   public Text coinText;
 
+        
         void Start()
         {
             Tags.facingRight = true;
-            player = GameObject.Find("Player").GetComponent<PlayerController>();
+
         }
 
         void Update()
         {
-            //coinText.text = coinsCounter.ToString();
-            if(player.deathState == true)
+           
+
+            for (int i = 0; i < player.Length; i++)
             {
-                playerGameObject.SetActive(false);
-                GameObject deathPlayer = (GameObject)Instantiate(deathPlayerPrefab, playerGameObject.transform.position, playerGameObject.transform.rotation);
-                deathPlayer.transform.localScale = new Vector3(playerGameObject.transform.localScale.x, playerGameObject.transform.localScale.y, playerGameObject.transform.localScale.z);
-                player.deathState = false;
-                Invoke("ReloadLevel", 3);
+                if (player[i].deathState == true)
+                {
+                    playerGameObject.SetActive(false);
+                    GameObject deathPlayer = (GameObject)Instantiate(deathPlayerPrefab, playerGameObject.transform.position, playerGameObject.transform.rotation);
+                    Destroy(player[player.Length-1].gameObject);
+                    deathPlayer.transform.localScale = new Vector3(playerGameObject.transform.localScale.x, playerGameObject.transform.localScale.y, playerGameObject.transform.localScale.z);
+                    player[i].deathState = false;
+                    Invoke("ReloadLevel", 3);
+                }
             }
         }
 

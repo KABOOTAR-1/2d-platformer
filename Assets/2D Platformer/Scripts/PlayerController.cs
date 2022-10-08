@@ -68,6 +68,10 @@ namespace Platformer
             {
                 Flip();
             }
+
+            if(transform.position.y<-4f)
+                Invoke("ReloadLevel", 3);
+
         }
 
         private void Flip()
@@ -100,6 +104,11 @@ namespace Platformer
               //  gameManager.coinsCounter += 1;
                 Destroy(other.gameObject);
             }
+        }
+
+        private void ReloadLevel()
+        {
+            Application.LoadLevel(Application.loadedLevel);
         }
     }
 }
