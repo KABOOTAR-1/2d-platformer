@@ -19,9 +19,13 @@ public class NewPlayer : MonoBehaviour
     }
     void Des()
     {
-        playerclone.transform.position = transform.position;
-        playerclone.SetActive(false);    
-        Invoke("Des", 5);
+        if (playerclone != null)
+        {
+            playerclone.transform.position = transform.position;
+            playerclone.SetActive(false);
+            Invoke("Des", 5);
+            playerclone.transform.position = transform.position;
+        }
     }
 }
 
