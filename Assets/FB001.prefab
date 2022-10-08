@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2797606790285319537}
   - component: {fileID: 705140982525509691}
   - component: {fileID: -6797322986979907034}
+  - component: {fileID: 4941790112149719985}
   m_Layer: 0
   m_Name: FB001
   m_TagString: Untagged
@@ -118,4 +119,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1365c886370dce74a9c52a16a88b6450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  t1: {fileID: 6952628394585513906, guid: a3dc7dd79a2fbc341a3fc828503f1ca9, type: 3}
+  Fireforce: 2
+--- !u!50 &4941790112149719985
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169115394508111235}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

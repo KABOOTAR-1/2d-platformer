@@ -10,9 +10,10 @@ namespace Platformer
         public float jumpForce;
         private float moveInput;
 
-        private bool facingRight = true;
+        
         [HideInInspector]
         public bool deathState = false;
+        public Transform firemark;
 
         private bool isGrounded;
         public Transform groundCheck;
@@ -58,11 +59,11 @@ namespace Platformer
                 rigidbody.AddForce(-transform.up * jumpForce/2000, ForceMode2D.Impulse);
             } // Turn on jump animation
 
-            if(facingRight == false && moveInput > 0)
+            if(Tags.facingRight == false && moveInput > 0)
             {
                 Flip();
             }
-            else if(facingRight == true && moveInput < 0)
+            else if(Tags.facingRight == true && moveInput < 0)
             {
                 Flip();
             }
@@ -70,7 +71,7 @@ namespace Platformer
 
         private void Flip()
         {
-            facingRight = !facingRight;
+            Tags.facingRight = !Tags.facingRight;
             Vector3 Scaler = transform.localScale;
             Scaler.x *= -1;
             transform.localScale = Scaler;

@@ -15,6 +15,7 @@ public class Spawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Transform t = transform.parent;
        
         if (Input.GetKeyDown(KeyCode.F) && Time.time>newtime)
         {
