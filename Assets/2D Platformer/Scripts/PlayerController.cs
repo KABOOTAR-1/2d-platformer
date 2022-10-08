@@ -40,6 +40,7 @@ namespace Platformer
             {
                 moveInput = Input.GetAxis("Horizontal");
                 rigidbody.velocity= new Vector2(moveInput*movingSpeed,rigidbody.velocity.y);
+                animator.SetInteger("Trigger", 1);
             }
             else
             {
