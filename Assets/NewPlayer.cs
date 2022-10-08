@@ -5,26 +5,28 @@ using UnityEngine;
 public class NewPlayer : MonoBehaviour
 {
     public GameObject playerclone;
-    GameObject clone;
+    public GameObject player;
     void Start()
     {
-        playerclone.SetActive(false);
+        playerclone.transform.position = transform.position;
+        Invoke("Des", 5);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.C) && playerclone.activeSelf == false)
-        {
-            playerclone.SetActive(true);
-            playerclone.transform.position=transform.position;
-        }
-        /*if (playerclone.activeSelf == true)
-            Invoke("Des", 5);*/
-    }
 
-    private void Des()
+    private void Update()
     {
-        playerclone.SetActive(false);
+        playerclone.transform.localScale = player.transform.localScale;
+    }
+    void Des()
+    {
+        playerclone.transform.position = transform.position;
+        playerclone.SetActive(false);    
+        Invoke("Des", 5);
     }
 }
+
+    // Update is called once per frame
+    
+
+  
+

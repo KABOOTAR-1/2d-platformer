@@ -8,7 +8,7 @@ namespace Platformer
     {
         public float movingSpeed;
         public float jumpForce;
-        private float moveInput;
+        public float moveInput;
 
         
         [HideInInspector]
@@ -20,6 +20,7 @@ namespace Platformer
 
         private Rigidbody2D rigidbody;
         private Animator animator;
+        public bool check;
         //private GameManager gameManager;
 
         void Start()
@@ -36,9 +37,12 @@ namespace Platformer
 
         void Update()
         {
+
+            check = Tags.facingRight;
+            moveInput = Input.GetAxis("Horizontal");
             if (Input.GetButton("Horizontal") ) 
             {
-                moveInput = Input.GetAxis("Horizontal");
+                
                 rigidbody.velocity= new Vector2(moveInput*movingSpeed,rigidbody.velocity.y);
                 animator.SetInteger("Trigger", 1);
             }

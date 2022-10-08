@@ -23,20 +23,27 @@ namespace Platformer
 
         void Update()
         {
-           
 
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                player[player.Length - 1].gameObject.SetActive(true);
+     
+            }
             for (int i = 0; i < player.Length; i++)
             {
                 if (player[i].deathState == true)
                 {
                     playerGameObject.SetActive(false);
                     GameObject deathPlayer = (GameObject)Instantiate(deathPlayerPrefab, playerGameObject.transform.position, playerGameObject.transform.rotation);
+                    if(player.Length>1)
                     Destroy(player[player.Length-1].gameObject);
                     deathPlayer.transform.localScale = new Vector3(playerGameObject.transform.localScale.x, playerGameObject.transform.localScale.y, playerGameObject.transform.localScale.z);
                     player[i].deathState = false;
                     Invoke("ReloadLevel", 3);
                 }
             }
+
+           
         }
 
         private void ReloadLevel()
