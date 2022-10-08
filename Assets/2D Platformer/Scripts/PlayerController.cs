@@ -90,10 +90,7 @@ namespace Platformer
             {
                 deathState = true; // Say to GameManager that player is dead
             }
-            else
-            {
-                deathState = false;
-            }
+            
         }
 
         private void OnTriggerEnter2D(Collider2D other)

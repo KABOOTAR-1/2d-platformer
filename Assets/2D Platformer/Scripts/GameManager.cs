@@ -16,6 +16,7 @@ namespace Platformer
 
         void Start()
         {
+            Tags.facingRight = true;
             player = GameObject.Find("Player").GetComponent<PlayerController>();
         }
 
