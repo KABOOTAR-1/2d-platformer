@@ -19,7 +19,7 @@ public class NewPlayer : MonoBehaviour
     }
     void Des()
     {
-
+        if(playerclone!=null)
             playerclone.SetActive(false);
             Invoke("Des", 5);
             
