@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class GameEnd : MonoBehaviour
 {
-     
-    public gameObject en ;
+     [SerializeField]
+    public GameObject en ;
     // Start is called before the first frame update
     void Start()
     {
+        
         en.SetActive(false);
     }
 
