@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1365c886370dce74a9c52a16a88b6450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Fireforce: 2
+  Fireforce: 5
 --- !u!50 &4941790112149719985
 Rigidbody2D:
   serializedVersion: 4
