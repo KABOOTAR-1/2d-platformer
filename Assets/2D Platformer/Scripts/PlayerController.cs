@@ -96,7 +96,8 @@ namespace Platformer
         {
             if (other.gameObject.tag == "Enemy")
             {
-                deathState = true; // Say to GameManager that player is dead
+                deathState = true;
+                rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);// Say to GameManager that player is dead
             }
             
         }
