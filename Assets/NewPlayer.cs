@@ -19,12 +19,11 @@ public class NewPlayer : MonoBehaviour
     }
     void Des()
     {
-        if (playerclone.activeSelf==true)
-        {
+
             playerclone.SetActive(false);
             Invoke("Des", 5);
             
-        }
+        
     }
 }
 
