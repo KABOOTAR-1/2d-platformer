@@ -53,7 +53,7 @@ namespace Platformer
                     animator.SetInteger("Trigger", 0);
                     float x = 0.5f;
                     x = Mathf.MoveTowards(x, 0, 0.5f);
-                    rigidbody.velocity = new Vector2(0,rigidbody.velocity.y);
+                    rigidbody.velocity = new Vector2(0,0);
                 }
             }
             if(Input.GetKeyDown(KeyCode.Space) && isGrounded )
