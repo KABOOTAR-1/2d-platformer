@@ -40,6 +40,9 @@ public class Fireballmove : MonoBehaviour
     { 
         if (collision.gameObject.tag != "Player" && collision.gameObject.tag!="Fireball")
             Destroy(gameObject);
+
+            if(collision.gameObject.tag=="Enemy")
+            Destroy(collision.gameObject);
     }
 
     private void delete()
