@@ -12,6 +12,8 @@ namespace Platformer
         public GameObject playerGameObject;
         public PlayerController[] player;
         public GameObject deathPlayerPrefab;
+        public Transform clonepos;
+        public Collider2D coll;
         //   public Text coinText;
 
         
@@ -23,9 +25,10 @@ namespace Platformer
 
         void Update()
         {
-
-            if (Input.GetKeyDown(KeyCode.C))
+            coll = Physics2D.OverlapCircle(clonepos.position, 0.25f);
+            if (Input.GetKeyDown(KeyCode.C) && coll==null )
             {
+                player[player.Length - 1].gameObject.transform.position = clonepos.position;
                 player[player.Length - 1].gameObject.SetActive(true);
      
             }
