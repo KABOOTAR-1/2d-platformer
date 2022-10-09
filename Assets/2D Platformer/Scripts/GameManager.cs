@@ -20,6 +20,7 @@ namespace Platformer
         void Start()
         {
             Tags.facingRight = true;
+            Tags.score = 0;
 
         }
 
