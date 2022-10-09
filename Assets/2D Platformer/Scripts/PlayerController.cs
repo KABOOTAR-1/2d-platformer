@@ -53,7 +53,7 @@ namespace Platformer
                     animator.SetInteger("Trigger", 0);
                     float x = 0.5f;
                     x = Mathf.MoveTowards(x, 0, 0.5f);
-                    rigidbody.velocity = new Vector2(0,0);
+                    rigidbody.velocity = new Vector2(0, rigidbody.velocity.y);
                 }
             }
             if(Input.GetKeyDown(KeyCode.Space) && isGrounded )
@@ -61,7 +61,7 @@ namespace Platformer
                 rigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
             }
             if (!isGrounded) { animator.SetInteger("Trigger", 2);
-               
+                rigidbody.AddForce(-transform.up * jumpForce/2000, ForceMode2D.Impulse);
             } // Turn on jump animation
 
             if(Tags.facingRight == false && moveInput > 0)
