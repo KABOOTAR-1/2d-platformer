@@ -14,7 +14,7 @@ public class Fireballmove : MonoBehaviour
         rigidbody = gameObject.GetComponent<Rigidbody2D>();
         face = Tags.facingRight;
         Scaler = transform.localScale;
-        Invoke("delete", 1.3f);
+        Invoke("delete", 1f);
     }
 
     // Update is called once per frame
