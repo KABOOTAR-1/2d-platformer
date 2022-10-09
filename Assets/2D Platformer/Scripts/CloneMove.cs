@@ -15,7 +15,7 @@ using UnityEngine;
 
         private bool isGrounded;
         public Transform groundCheck;
-public Rigidbody2D rigidbody;
+        public Rigidbody2D rigidbody;
         public Animator animator;
         public bool check;
         //private GameManager gameManager;
