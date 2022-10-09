@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class GameEnd : MonoBehaviour
 {
+     
+    public gameObject en ;
     // Start is called before the first frame update
     void Start()
     {
-        
+        en.SetActive(false);
     }
 
     // Update is called once per frame
@@ -19,9 +21,9 @@ public class GameEnd : MonoBehaviour
      private void OnCollisionEnter2D(Collision2D other)
         {
             if(other.gameObject.tag=="Player"){
-                Time.timeScale=0f;
                 
- Invoke("RE",3f);
+                Invoke("RE",3f);
+                en.SetActive(true);
             }
             
         }
