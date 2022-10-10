@@ -9,6 +9,7 @@ TagManager:
   - LEVEL
   - Fireball
   - Ground
+  - Final
   layers:
   - Default
   - TransparentFX
